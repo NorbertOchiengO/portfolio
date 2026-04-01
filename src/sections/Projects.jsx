@@ -4,144 +4,127 @@ import Jobly from "../assets/jobly.png";
 import Sunny from "../assets/sunny.png";
 import CodePal from "../assets/codepal.png";
 import Resumo from "../assets/resumo.png";
+import Logo from "../assets/sample 1.jpg";
+import Logo2 from "../assets/sample 2.jpg";
+import Logo3 from "../assets/sample 3.jpg";
+import Logo4 from "../assets/sample 4.jpg";
+import Logo5 from "../assets/sample 5.jpg";
+import Logo6 from "../assets/sample 6.jpg";
+import Logo7 from "../assets/sample 7.jpg";
+import Logo8 from "../assets/sample 8.jpg";
 
-const projects = [
+// Split the data into two arrays for easier mapping
+const webProjects = [
   {
     title: "Jobly - Job landing webpage",
-    description:
-      "A modern, streamlined job board platform designed to connect top talent with tech companies through a clean, high-conversion landing page.",
-    image: Jobly, //
+    description: "A modern, streamlined job board platform designed to connect top talent with tech companies.",
+    image: Jobly,
     tags: ["React", "Express.js", "NodeJS", "MongoDB"],
-    link: "#",
-    github: "#",
+    link: "#", github: "#",
   },
   {
     title: "Thousand sunny - Hotel Landing webpage",
-    description:
-      "A luxury hospitality landing page inspired by the spirit of adventure, featuring seamless booking flows and elegant visual storytelling for travelers.",
-    image: Sunny, //
+    description: "A luxury hospitality landing page with seamless booking flows and elegant visual storytelling.",
+    image: Sunny,
     tags: ["React", "CSS3", "NodeJS"],
-    link: "#",
-    github: "#",
+    link: "#", github: "#",
   },
   {
     title: "CodePal - Coding assistant Landing webpage",
-    description:
-      "A sleek landing page for an AI-driven coding companion, highlighting features like real-time debugging, code optimization, and multi-language support.",
-    image: CodePal, //
+    description: "A sleek landing page for an AI-driven coding companion with real-time debugging features.",
+    image: CodePal,
     tags: ["React", "Tailwind CSS"],
-    link: "#",
-    github: "#",
+    link: "#", github: "#",
   },
   {
     title: "Resumo - Resume Making webpage",
-    description:
-      "A user-friendly builder that helps job seekers craft professional, ATS-friendly resumes in minutes with customizable templates and live previews.",
-    image: Resumo, //
+    description: "An ATS-friendly resume builder with customizable templates and live previews.",
+    image: Resumo,
     tags: ["React", "Express.js", "NodeJS", "MongoDB"],
-    link: "#",
-    github: "#",
+    link: "#", github: "#",
   },
+];
+
+const designSamples = [
+  { title: "Brand Identity - Sample 1", image: Logo, tags: ["Illustrator", "Branding"] },
+  { title: "Visual Identity - Sample 2", image: Logo2, tags: ["Illustrator", "Design"] },
+  { title: "Minimalist Logo - Sample 3", image: Logo3, tags: ["Illustrator", "Logo"] },
+  { title: "Business Branding - Sample 4", image: Logo4, tags: ["Illustrator", "Branding"] },
+  { title: "Creative Agency - Sample 5", image: Logo5, tags: ["Illustrator", "Vector"] },
+  { title: "Tech Branding - Sample 6", image: Logo6, tags: ["Illustrator", "Vector"] },
+  { title: "Mamba Hockey Poster", image: Logo7, tags: ["Poster Art", "Sports"] },
+  { title: "Mamba Hockey Promo", image: Logo8, tags: ["Marketing", "Social"] },
 ];
 
 export const Projects = () => {
   return (
     <section id="projects" className="py-32 relative overflow-hidden">
-      {/* Bg glows */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mx-auto max-w-3xl mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Featured Work
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Projects that
-            <span className="font-serif italic font-normal text-white">
-              {" "}
-              make an impact.
-            </span>
+        
+        {/* SECTION HEADER */}
+        <div className="text-center mx-auto max-w-3xl mb-20">
+          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">Featured Work</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground">
+            Projects that <span className="font-serif italic font-normal text-white">make an impact.</span>
           </h2>
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A selection of my recent work, from complex web applications to
-            innovative tools that solve real-world problems.
-          </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
-              style={{ animationDelay: `${(idx + 1) * 100}ms` }}
-            >
-              {/* Image */}
-              <div className="relative overflow-hidden aspect-video">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-fill h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div
-                  className="absolute inset-0 
-                bg-gradient-to-t from-card via-card/50
-                 to-transparent opacity-60"
-                />
-                {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
+        {/* 1. WEB DEVELOPMENT SECTION (2 per row) */}
+        <div className="mb-24">
+          <h3 className="text-2xl font-semibold mb-10 border-l-4 border-primary pl-4">Web Development</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {webProjects.map((project, idx) => (
+              <div key={idx} className="group glass rounded-2xl overflow-hidden flex flex-col">
+                <div className="relative aspect-video overflow-hidden bg-black/20">
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <a href={project.link} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground"><ArrowUpRight className="w-5 h-5" /></a>
+                    <a href={project.github} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground"><Github className="w-5 h-5" /></a>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
+                  <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="px-3 py-1 rounded-full bg-surface text-[10px] border border-border/50">{tag}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
 
-              {/* Content */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <ArrowUpRight
-                    className="w-5 h-5 
-                  text-muted-foreground group-hover:text-primary
-                   group-hover:translate-x-1 
-                   group-hover:-translate-y-1 transition-all"
+        {/* 2. GRAPHIC DESIGN SECTION (4 per row on desktop) */}
+        <div>
+          <h3 className="text-2xl font-semibold mb-10 border-l-4 border-highlight pl-4 text-highlight">Graphic Design</h3>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {designSamples.map((sample, idx) => (
+              <div key={idx} className="group glass rounded-xl overflow-hidden flex flex-col">
+                <div className="relative aspect-square flex items-center justify-center bg-black/20 p-6"> {/* 👈 Centering Fix */}
+                  <img 
+                    src={sample.image} 
+                    alt={sample.title} 
+                    className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110" 
                   />
                 </div>
-                <p className="text-muted-foreground text-sm">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIdx) => (
-                    <span
-                      key={tagIdx}
-                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div className="p-4 border-t border-border/10">
+                  <h4 className="text-sm font-medium truncate">{sample.title}</h4>
+                  <div className="flex gap-2 mt-2">
+                    {sample.tags.slice(0, 1).map((tag, i) => (
+                      <span key={i} className="text-[9px] text-muted-foreground uppercase tracking-tighter italic">{tag}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* View All CTA */}
-        <div className="text-center mt-12 animate-fade-in animation-delay-500">
+        <div className="text-center mt-20">
           <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
+            View Full Portfolio <ArrowUpRight className="w-5 h-5 ml-2" />
           </AnimatedBorderButton>
         </div>
       </div>
